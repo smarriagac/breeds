@@ -1,18 +1,17 @@
 import 'package:flutter/material.dart';
-import 'package:hooks_riverpod/hooks_riverpod.dart';
 
-import '../../../../reposiories.dart';
+import '../../../../inject_repositories.dart';
 import '../../../global/extensions/build_context_ext.dart';
 import '../../../routes/routes.dart';
 
-class SplashView extends ConsumerStatefulWidget {
-  const SplashView({Key? key}) : super(key: key);
+class SplashView extends StatefulWidget {
+  const SplashView({super.key});
 
   @override
-  ConsumerState<SplashView> createState() => _SplashViewState();
+  State<SplashView> createState() => _SplashViewState();
 }
 
-class _SplashViewState extends ConsumerState<SplashView> {
+class _SplashViewState extends State<SplashView> {
   @override
   void initState() {
     super.initState();
@@ -23,8 +22,8 @@ class _SplashViewState extends ConsumerState<SplashView> {
 
   Future<void> _init() async {
     final routeName = await () async {
-      final connectivityRepository = ref.watch(Repositories.connectivity);
-      final hasInternet = await connectivityRepository.hasInternet;
+      final connectivityRepository = Repositories.connectivity;
+      final hasInternet = connectivityRepository.hasInternet;
       await Future.delayed(const Duration(seconds: 2));
       if (!hasInternet) {
         return Routes.OFFLINE;

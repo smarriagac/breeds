@@ -1,14 +1,14 @@
 import 'package:flutter/material.dart';
-import 'package:hooks_riverpod/hooks_riverpod.dart';
+import 'package:provider/provider.dart';
 
 import '../../../global/controllers/theme_control.dart';
 import '../../../global/extensions/build_context_ext.dart';
 
-class ProfileView extends ConsumerWidget {
+class ProfileView extends StatelessWidget {
   const ProfileView({super.key});
 
   @override
-  Widget build(BuildContext context, WidgetRef ref) {
+  Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(),
       body: SafeArea(
@@ -19,7 +19,7 @@ class ProfileView extends ConsumerWidget {
               SwitchListTile(
                 title: const Text('Dark Mode'),
                 value: context.darkMode,
-                onChanged: ref.read(themeProvider.notifier).onChange,
+                onChanged: context.read<ThemeController>().onChange,
               ),
             ],
           ),

@@ -1,29 +1,21 @@
-import 'package:hooks_riverpod/hooks_riverpod.dart';
+import 'package:flutter/widgets.dart';
 
 import '../../../domain/repositories/preferences_repository.dart';
-import '../../../reposiories.dart';
 
-final themeProvider = StateNotifierProvider<ThemeControl, bool>(
-  (ref) {
-    final preferenceRepository = ref.watch(Repositories.preferences);
+class ThemeController extends ChangeNotifier {
+  ThemeController(
+    this._darkMode, {
+    required this.preferenceRepository,
+  });
 
-    return ThemeControl(
-      preferenceRepository.darkMode,
-      preferenceRepository: preferenceRepository,
-    );
-  },
-);
+  final PreferenceRepository preferenceRepository;
 
-class ThemeControl extends StateNotifier<bool> {
-  ThemeControl(
-    super.state, {
-    required PreferenceRepository preferenceRepository,
-  }) : _preferenceRepository = preferenceRepository;
-
-  final PreferenceRepository _preferenceRepository;
+  bool _darkMode;
+  bool get darkMode => _darkMode;
 
   void onChange(bool darkMode) {
-    state = darkMode;
-    _preferenceRepository.setDarkMode(darkMode);
+    _darkMode = darkMode;
+    preferenceRepository.setDarkMode(_darkMode);
+    notifyListeners();
   }
 }

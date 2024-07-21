@@ -1,12 +1,12 @@
 import 'package:flutter/material.dart';
-import 'package:hooks_riverpod/hooks_riverpod.dart';
+import 'package:provider/provider.dart';
 
 import '../../../../routes/routes.dart';
 import '../../controller/home_controller.dart';
 import '../../controller/state/home_state.dart';
 import 'card_cat.dart';
 
-class ListCardCats extends StatefulHookConsumerWidget {
+class ListCardCats extends StatefulWidget {
   const ListCardCats({
     super.key,
     required this.homeState,
@@ -14,10 +14,10 @@ class ListCardCats extends StatefulHookConsumerWidget {
   final HomePageState homeState;
 
   @override
-  ConsumerState<ListCardCats> createState() => _ListCardCatsState();
+  State<ListCardCats> createState() => _ListCardCatsState();
 }
 
-class _ListCardCatsState extends ConsumerState<ListCardCats>
+class _ListCardCatsState extends State<ListCardCats>
     with AutomaticKeepAliveClientMixin {
   final scrollController = ScrollController();
   final _textEditingController = TextEditingController();
@@ -45,7 +45,7 @@ class _ListCardCatsState extends ConsumerState<ListCardCats>
               controller: _textEditingController,
               onChanged: (text) => _query.value = text.trim(),
               decoration: InputDecoration(
-                hintText: 'name',
+                hintText: '¿ Que gato buscas ?',
                 suffixIcon: IconButton(
                   icon: const Icon(
                     Icons.clear,
@@ -70,7 +70,7 @@ class _ListCardCatsState extends ConsumerState<ListCardCats>
                       scrollController.position.maxScrollExtent;
                   if (offset >= maxScrollExtent) {
                     int page = widget.homeState.page;
-                    ref.read(homeController.notifier).init(
+                    context.read<HomeController>().init(
                           page: page += 1,
                         );
                   }

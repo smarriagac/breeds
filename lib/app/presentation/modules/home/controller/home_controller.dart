@@ -1,17 +1,6 @@
-import 'package:hooks_riverpod/hooks_riverpod.dart';
-
 import '../../../../domain/repositories/breeds_repository.dart';
-import '../../../../reposiories.dart';
+import '../../../global/state_notifier.dart';
 import 'state/home_state.dart';
-
-final homeController = StateNotifierProvider<HomeController, HomeState>(
-  (ref) {
-    final breedsRepository = ref.watch(Repositories.breeds);
-    return HomeController(
-      breedsRepository: breedsRepository,
-    )..init();
-  },
-);
 
 class HomeController extends StateNotifier<HomeState> {
   HomeController({

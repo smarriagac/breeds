@@ -1,16 +1,16 @@
 import 'package:flutter/material.dart';
-import 'package:hooks_riverpod/hooks_riverpod.dart';
+import 'package:provider/provider.dart';
 
 import '../../../routes/routes.dart';
 import '../controller/home_controller.dart';
 import 'widgets/list_card_cat.dart';
 
-class HomeView extends ConsumerWidget {
-  const HomeView({Key? key}) : super(key: key);
+class HomeView extends StatelessWidget {
+  const HomeView({super.key});
 
   @override
-  Widget build(BuildContext context, WidgetRef ref) {
-    final beers = ref.watch(homeController);
+  Widget build(BuildContext context) {
+    final HomeController beers = context.watch();
 
     return Scaffold(
       appBar: AppBar(
@@ -44,7 +44,7 @@ class HomeView extends ConsumerWidget {
           opacity: animation,
           child: child,
         ),
-        child: beers.when(
+        child: beers.state.when(
           loading: () => const Center(child: CircularProgressIndicator()),
           failed: () => const Center(child: Icon(Icons.close)),
           loaded: (homepageState) => ListCardCats(
