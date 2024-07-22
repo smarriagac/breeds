@@ -6,9 +6,9 @@ part 'home_state.freezed.dart';
 
 @freezed
 class HomeState with _$HomeState {
-  const factory HomeState.loading() = _HomeStateLoading;
-  const factory HomeState.failed() = _HomeStateFailed;
-  const factory HomeState.loaded(HomePageState state) = _HomeStateLoaded;
+  const factory HomeState.loading() = HomeStateLoading;
+  const factory HomeState.failed() = HomeStateFailed;
+  const factory HomeState.loaded(HomePageState state) = HomeStateLoaded;
 }
 
 @freezed

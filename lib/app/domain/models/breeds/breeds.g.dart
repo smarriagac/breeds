@@ -46,54 +46,7 @@ _$BreedsImpl _$$BreedsImplFromJson(Map<String, dynamic> json) => _$BreedsImpl(
       referenceImageId: json['reference_image_id'] as String?,
     );
 
-Map<String, dynamic> _$$BreedsImplToJson(_$BreedsImpl instance) =>
-    <String, dynamic>{
-      'weight': instance.weight,
-      'id': instance.id,
-      'name': instance.name,
-      'cfa_url': instance.cfaUrl,
-      'vetstreet_url': instance.vetstreetUrl,
-      'vcahospitals_url': instance.vcahospitalsUrl,
-      'temperament': instance.temperament,
-      'origin': instance.origin,
-      'country_codes': instance.countryCodes,
-      'country_code': instance.countryCode,
-      'description': instance.description,
-      'life_span': instance.lifeSpan,
-      'indoor': instance.indoor,
-      'lap': instance.lap,
-      'alt_names': instance.altNames,
-      'adaptability': instance.adaptability,
-      'affection_level': instance.affectionLevel,
-      'child_friendly': instance.childFriendly,
-      'dog_friendly': instance.dogFriendly,
-      'energy_level': instance.energyLevel,
-      'grooming': instance.grooming,
-      'health_issues': instance.healthIssues,
-      'intelligence': instance.intelligence,
-      'shedding_level': instance.sheddingLevel,
-      'social_needs': instance.socialNeeds,
-      'stranger_friendly': instance.strangerFriendly,
-      'vocalisation': instance.vocalisation,
-      'experimental': instance.experimental,
-      'hairless': instance.hairless,
-      'natural': instance.natural,
-      'rare': instance.rare,
-      'rex': instance.rex,
-      'suppressed_tail': instance.suppressedTail,
-      'short_legs': instance.shortLegs,
-      'wikipedia_url': instance.wikipediaUrl,
-      'hypoallergenic': instance.hypoallergenic,
-      'reference_image_id': instance.referenceImageId,
-    };
-
 _$WeightImpl _$$WeightImplFromJson(Map<String, dynamic> json) => _$WeightImpl(
       imperial: json['imperial'] as String,
       metric: json['metric'] as String,
     );
-
-Map<String, dynamic> _$$WeightImplToJson(_$WeightImpl instance) =>
-    <String, dynamic>{
-      'imperial': instance.imperial,
-      'metric': instance.metric,
-    };

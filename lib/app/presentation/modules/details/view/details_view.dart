@@ -5,7 +5,7 @@ import 'widgets/details_cat_body.dart';
 import 'widgets/details_cat_header.dart';
 
 class DetailsView extends StatelessWidget {
-  const DetailsView({Key? key}) : super(key: key);
+  const DetailsView({super.key});
 
   @override
   Widget build(BuildContext context) {

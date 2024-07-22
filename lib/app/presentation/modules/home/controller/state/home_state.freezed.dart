@@ -40,23 +40,23 @@ mixin _$HomeState {
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult map<TResult extends Object?>({
-    required TResult Function(_HomeStateLoading value) loading,
-    required TResult Function(_HomeStateFailed value) failed,
-    required TResult Function(_HomeStateLoaded value) loaded,
+    required TResult Function(HomeStateLoading value) loading,
+    required TResult Function(HomeStateFailed value) failed,
+    required TResult Function(HomeStateLoaded value) loaded,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
-    TResult? Function(_HomeStateLoading value)? loading,
-    TResult? Function(_HomeStateFailed value)? failed,
-    TResult? Function(_HomeStateLoaded value)? loaded,
+    TResult? Function(HomeStateLoading value)? loading,
+    TResult? Function(HomeStateFailed value)? failed,
+    TResult? Function(HomeStateLoaded value)? loaded,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
-    TResult Function(_HomeStateLoading value)? loading,
-    TResult Function(_HomeStateFailed value)? failed,
-    TResult Function(_HomeStateLoaded value)? loaded,
+    TResult Function(HomeStateLoading value)? loading,
+    TResult Function(HomeStateFailed value)? failed,
+    TResult Function(HomeStateLoaded value)? loaded,
     required TResult orElse(),
   }) =>
       throw _privateConstructorUsedError;
@@ -97,7 +97,7 @@ class __$$HomeStateLoadingImplCopyWithImpl<$Res>
 
 /// @nodoc
 
-class _$HomeStateLoadingImpl implements _HomeStateLoading {
+class _$HomeStateLoadingImpl implements HomeStateLoading {
   const _$HomeStateLoadingImpl();
 
   @override
@@ -151,9 +151,9 @@ class _$HomeStateLoadingImpl implements _HomeStateLoading {
   @override
   @optionalTypeArgs
   TResult map<TResult extends Object?>({
-    required TResult Function(_HomeStateLoading value) loading,
-    required TResult Function(_HomeStateFailed value) failed,
-    required TResult Function(_HomeStateLoaded value) loaded,
+    required TResult Function(HomeStateLoading value) loading,
+    required TResult Function(HomeStateFailed value) failed,
+    required TResult Function(HomeStateLoaded value) loaded,
   }) {
     return loading(this);
   }
@@ -161,9 +161,9 @@ class _$HomeStateLoadingImpl implements _HomeStateLoading {
   @override
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
-    TResult? Function(_HomeStateLoading value)? loading,
-    TResult? Function(_HomeStateFailed value)? failed,
-    TResult? Function(_HomeStateLoaded value)? loaded,
+    TResult? Function(HomeStateLoading value)? loading,
+    TResult? Function(HomeStateFailed value)? failed,
+    TResult? Function(HomeStateLoaded value)? loaded,
   }) {
     return loading?.call(this);
   }
@@ -171,9 +171,9 @@ class _$HomeStateLoadingImpl implements _HomeStateLoading {
   @override
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
-    TResult Function(_HomeStateLoading value)? loading,
-    TResult Function(_HomeStateFailed value)? failed,
-    TResult Function(_HomeStateLoaded value)? loaded,
+    TResult Function(HomeStateLoading value)? loading,
+    TResult Function(HomeStateFailed value)? failed,
+    TResult Function(HomeStateLoaded value)? loaded,
     required TResult orElse(),
   }) {
     if (loading != null) {
@@ -183,8 +183,8 @@ class _$HomeStateLoadingImpl implements _HomeStateLoading {
   }
 }
 
-abstract class _HomeStateLoading implements HomeState {
-  const factory _HomeStateLoading() = _$HomeStateLoadingImpl;
+abstract class HomeStateLoading implements HomeState {
+  const factory HomeStateLoading() = _$HomeStateLoadingImpl;
 }
 
 /// @nodoc
@@ -205,7 +205,7 @@ class __$$HomeStateFailedImplCopyWithImpl<$Res>
 
 /// @nodoc
 
-class _$HomeStateFailedImpl implements _HomeStateFailed {
+class _$HomeStateFailedImpl implements HomeStateFailed {
   const _$HomeStateFailedImpl();
 
   @override
@@ -259,9 +259,9 @@ class _$HomeStateFailedImpl implements _HomeStateFailed {
   @override
   @optionalTypeArgs
   TResult map<TResult extends Object?>({
-    required TResult Function(_HomeStateLoading value) loading,
-    required TResult Function(_HomeStateFailed value) failed,
-    required TResult Function(_HomeStateLoaded value) loaded,
+    required TResult Function(HomeStateLoading value) loading,
+    required TResult Function(HomeStateFailed value) failed,
+    required TResult Function(HomeStateLoaded value) loaded,
   }) {
     return failed(this);
   }
@@ -269,9 +269,9 @@ class _$HomeStateFailedImpl implements _HomeStateFailed {
   @override
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
-    TResult? Function(_HomeStateLoading value)? loading,
-    TResult? Function(_HomeStateFailed value)? failed,
-    TResult? Function(_HomeStateLoaded value)? loaded,
+    TResult? Function(HomeStateLoading value)? loading,
+    TResult? Function(HomeStateFailed value)? failed,
+    TResult? Function(HomeStateLoaded value)? loaded,
   }) {
     return failed?.call(this);
   }
@@ -279,9 +279,9 @@ class _$HomeStateFailedImpl implements _HomeStateFailed {
   @override
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
-    TResult Function(_HomeStateLoading value)? loading,
-    TResult Function(_HomeStateFailed value)? failed,
-    TResult Function(_HomeStateLoaded value)? loaded,
+    TResult Function(HomeStateLoading value)? loading,
+    TResult Function(HomeStateFailed value)? failed,
+    TResult Function(HomeStateLoaded value)? loaded,
     required TResult orElse(),
   }) {
     if (failed != null) {
@@ -291,8 +291,8 @@ class _$HomeStateFailedImpl implements _HomeStateFailed {
   }
 }
 
-abstract class _HomeStateFailed implements HomeState {
-  const factory _HomeStateFailed() = _$HomeStateFailedImpl;
+abstract class HomeStateFailed implements HomeState {
+  const factory HomeStateFailed() = _$HomeStateFailedImpl;
 }
 
 /// @nodoc
@@ -338,7 +338,7 @@ class __$$HomeStateLoadedImplCopyWithImpl<$Res>
 
 /// @nodoc
 
-class _$HomeStateLoadedImpl implements _HomeStateLoaded {
+class _$HomeStateLoadedImpl implements HomeStateLoaded {
   const _$HomeStateLoadedImpl(this.state);
 
   @override
@@ -404,9 +404,9 @@ class _$HomeStateLoadedImpl implements _HomeStateLoaded {
   @override
   @optionalTypeArgs
   TResult map<TResult extends Object?>({
-    required TResult Function(_HomeStateLoading value) loading,
-    required TResult Function(_HomeStateFailed value) failed,
-    required TResult Function(_HomeStateLoaded value) loaded,
+    required TResult Function(HomeStateLoading value) loading,
+    required TResult Function(HomeStateFailed value) failed,
+    required TResult Function(HomeStateLoaded value) loaded,
   }) {
     return loaded(this);
   }
@@ -414,9 +414,9 @@ class _$HomeStateLoadedImpl implements _HomeStateLoaded {
   @override
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
-    TResult? Function(_HomeStateLoading value)? loading,
-    TResult? Function(_HomeStateFailed value)? failed,
-    TResult? Function(_HomeStateLoaded value)? loaded,
+    TResult? Function(HomeStateLoading value)? loading,
+    TResult? Function(HomeStateFailed value)? failed,
+    TResult? Function(HomeStateLoaded value)? loaded,
   }) {
     return loaded?.call(this);
   }
@@ -424,9 +424,9 @@ class _$HomeStateLoadedImpl implements _HomeStateLoaded {
   @override
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
-    TResult Function(_HomeStateLoading value)? loading,
-    TResult Function(_HomeStateFailed value)? failed,
-    TResult Function(_HomeStateLoaded value)? loaded,
+    TResult Function(HomeStateLoading value)? loading,
+    TResult Function(HomeStateFailed value)? failed,
+    TResult Function(HomeStateLoaded value)? loaded,
     required TResult orElse(),
   }) {
     if (loaded != null) {
@@ -436,8 +436,8 @@ class _$HomeStateLoadedImpl implements _HomeStateLoaded {
   }
 }
 
-abstract class _HomeStateLoaded implements HomeState {
-  const factory _HomeStateLoaded(final HomePageState state) =
+abstract class HomeStateLoaded implements HomeState {
+  const factory HomeStateLoaded(final HomePageState state) =
       _$HomeStateLoadedImpl;
 
   HomePageState get state;

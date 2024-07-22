@@ -3,7 +3,7 @@ import 'package:freezed_annotation/freezed_annotation.dart';
 part 'breeds.freezed.dart';
 part 'breeds.g.dart';
 
-@freezed
+@Freezed(toJson: false)
 class Breeds with _$Breeds {
   @JsonSerializable(fieldRename: FieldRename.snake)
   const factory Breeds({
@@ -49,7 +49,7 @@ class Breeds with _$Breeds {
   factory Breeds.fromJson(Map<String, dynamic> json) => _$BreedsFromJson(json);
 }
 
-@freezed
+@Freezed(toJson: false)
 class Weight with _$Weight {
   const factory Weight({
     required String imperial,

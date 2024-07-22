@@ -11,13 +11,16 @@ import 'app/inject_repositories.dart';
 import 'app/my_app.dart';
 import 'app/presentation/global/controllers/theme_control.dart';
 import 'app/presentation/modules/home/controller/home_controller.dart';
+import 'app/presentation/routes/routes.dart';
 
+// coverage:ignore-start
 void main() async {
   WidgetsFlutterBinding.ensureInitialized();
   final systemDarkMode = window.platformBrightness == Brightness.dark;
 
   final http = Http(
     baseUrl: 'https://api.thecatapi.com',
+    useApiKey: true,
     apiKey:
         'ive_99Qe4Ppj34NdplyLW67xCV7Ds0oSLKGgcWWYnSzMJY9C0QOu0HUR4azYxWkyW2nr',
   );
@@ -31,7 +34,24 @@ void main() async {
   );
 
   runApp(
-    MultiProvider(
+    const Root(),
+  );
+}
+// coverage:ignore-end
+
+class Root extends StatelessWidget {
+  const Root({
+    super.key,
+    this.initialRoute = Routes.SPLASH,
+    this.appRoutesA,
+  });
+
+  final String initialRoute;
+  final Map<String, WidgetBuilder>? appRoutesA;
+
+  @override
+  Widget build(BuildContext context) {
+    return MultiProvider(
       providers: [
         ChangeNotifierProvider<ThemeController>(
           create: (context) {
@@ -50,7 +70,10 @@ void main() async {
           },
         ),
       ],
-      child: const MyApp(),
-    ),
-  );
+      child: MyApp(
+        initialRoute: initialRoute,
+        appRoutesA: appRoutesA,
+      ),
+    );
+  }
 }

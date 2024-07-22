@@ -35,7 +35,6 @@ ThemeData getTheme(bool darkMode) {
   const darkStyle = TextStyle(color: Colors.black);
 
   return ligthTheme.copyWith(
-    useMaterial3: true,
     appBarTheme: const AppBarTheme(
       backgroundColor: Colors.white,
       elevation: 0,

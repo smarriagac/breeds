@@ -58,7 +58,6 @@ mixin _$Breeds {
   int get hypoallergenic => throw _privateConstructorUsedError;
   String? get referenceImageId => throw _privateConstructorUsedError;
 
-  Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
   @JsonKey(ignore: true)
   $BreedsCopyWith<Breeds> get copyWith => throw _privateConstructorUsedError;
 }
@@ -819,13 +818,6 @@ class _$BreedsImpl implements _Breeds {
   @pragma('vm:prefer-inline')
   _$$BreedsImplCopyWith<_$BreedsImpl> get copyWith =>
       __$$BreedsImplCopyWithImpl<_$BreedsImpl>(this, _$identity);
-
-  @override
-  Map<String, dynamic> toJson() {
-    return _$$BreedsImplToJson(
-      this,
-    );
-  }
 }
 
 abstract class _Breeds implements Breeds {
@@ -959,7 +951,6 @@ mixin _$Weight {
   String get imperial => throw _privateConstructorUsedError;
   String get metric => throw _privateConstructorUsedError;
 
-  Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
   @JsonKey(ignore: true)
   $WeightCopyWith<Weight> get copyWith => throw _privateConstructorUsedError;
 }
@@ -1039,7 +1030,7 @@ class __$$WeightImplCopyWithImpl<$Res>
 }
 
 /// @nodoc
-@JsonSerializable()
+@JsonSerializable(createToJson: false)
 class _$WeightImpl implements _Weight {
   const _$WeightImpl({required this.imperial, required this.metric});
 
@@ -1075,13 +1066,6 @@ class _$WeightImpl implements _Weight {
   @pragma('vm:prefer-inline')
   _$$WeightImplCopyWith<_$WeightImpl> get copyWith =>
       __$$WeightImplCopyWithImpl<_$WeightImpl>(this, _$identity);
-
-  @override
-  Map<String, dynamic> toJson() {
-    return _$$WeightImplToJson(
-      this,
-    );
-  }
 }
 
 abstract class _Weight implements Weight {

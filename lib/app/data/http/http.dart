@@ -18,15 +18,18 @@ class Http {
     Client? client,
     required String baseUrl,
     String? apiKey,
+    bool? useApiKey,
     Map<String, dynamic>? headersGeneral,
   })  : _client = client ?? Client(),
         _apiKey = apiKey ?? '',
         _baseUrl = baseUrl,
-        _headersGeneral = headersGeneral ?? {};
+        _headersGeneral = headersGeneral ?? {},
+        _useApiKey = useApiKey ?? false;
 
   final Client _client;
   final String _baseUrl;
   final String _apiKey;
+  final bool _useApiKey;
   final Map<String, dynamic> _headersGeneral;
 
   Future<Either<HttpFailure, T>> request<T>(
@@ -35,15 +38,14 @@ class Http {
     HttpMethod method = HttpMethod.get,
     Map<String, String> headers = const {},
     Map<String, String> queryParameters = const {},
-    bool useApiKey = false,
-    String titleUseApiKey = 'x-api-key',
+    String titleUseApiKey = 'api_key',
     Map<String, dynamic> body = const {},
     Duration timeout = const Duration(seconds: 35),
   }) async {
     Map<String, dynamic> logs = {};
     StackTrace? stackTrace;
     try {
-      if (useApiKey) {
+      if (_useApiKey) {
         queryParameters = {
           ...queryParameters,
           titleUseApiKey: _apiKey,

@@ -24,7 +24,6 @@ class _SplashViewState extends State<SplashView> {
     final routeName = await () async {
       final connectivityRepository = Repositories.connectivity;
       final hasInternet = connectivityRepository.hasInternet;
-      await Future.delayed(const Duration(seconds: 2));
       if (!hasInternet) {
         return Routes.OFFLINE;
       }

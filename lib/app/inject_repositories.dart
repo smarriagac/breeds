@@ -44,7 +44,7 @@ Future<void> injectDependencies({
 }
 
 class Repositories {
-  Repositories._();
+  Repositories._(); // coverage:ignore-line
 
   /// [breeds] : Api para el consumo.
   static BreedsRepository get breeds => ServiceLocator.instance.find();
